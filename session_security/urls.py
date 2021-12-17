@@ -14,15 +14,12 @@ ie::
     )
 
 """
-try:
-    from django.conf.urls import url
-except ImportError:
-    from django.conf.urls.defaults import url
+from django.urls import path
 
 from .views import PingView
 
 urlpatterns = [
-    url(
+    path(
         'ping/$',
         PingView.as_view(),
         name='session_security_ping',
